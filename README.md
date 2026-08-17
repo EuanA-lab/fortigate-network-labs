@@ -99,3 +99,6 @@ Stop debugging:
 ## Result
 
 PC01 and PC02 successfully communicate across the two FortiGate firewalls using routes dynamically learned through OSPF.
+
+<img width="670" height="897" alt="image" src="https://github.com/user-attachments/assets/dde2c933-f9e6-40f1-8732-48d611f8ee3b" />
+
