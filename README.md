@@ -10,7 +10,7 @@ Each FortiGate has a directly connected LAN containing a test PC. OSPF is used b
 
 ## Topology
 
-![FortiGate OSPF Lab Topology](topology.png)
+![FortiGate OSPF Lab Topology](Lab 1 image.png)
 
 ## IP Addressing
 
