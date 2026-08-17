@@ -18,8 +18,8 @@ PC01 ---- FW01 ---- FW02 ---- PC02
 |---|---|---|---|
 | PC01 | eth0 | 192.168.10.10/24 | LAN 1 client |
 | FW01 | port3 | 192.168.10.1/24 | LAN 1 gateway |
-| FW01 | port2 | 10.0.0.2/30 | OSPF transit |
-| FW02 | port2 | 10.0.0.1/30 | OSPF transit |
+| FW01 | port2 | 10.0.0.1/30 | OSPF transit |
+| FW02 | port2 | 10.0.0.2/30 | OSPF transit |
 | FW02 | port3 | 192.168.20.1/24 | LAN 2 gateway |
 | PC02 | eth0 | 192.168.20.10/24 | LAN 2 client |
 
