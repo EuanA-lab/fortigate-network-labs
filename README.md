@@ -102,3 +102,5 @@ PC01 and PC02 successfully communicate across the two FortiGate firewalls using 
 
 <img width="770" height="1134" alt="image" src="https://github.com/user-attachments/assets/58d62389-5f6b-46e8-abb3-7543cfbc9039" />
 
+<img width="548" height="952" alt="image" src="https://github.com/user-attachments/assets/5eb4c98d-db35-4ad3-a990-f16836a86dfa" />
+
