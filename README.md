@@ -35,6 +35,86 @@ Verification included:
 - Remote LAN networks appearing as OSPF routes
 - End-to-end connectivity between PC01 and PC02
 
+## Configuration
+
+OSPF configuration on each firewall
+
+FW01 # show system interface port2
+config system interface
+    edit "port2"
+        set vdom "root"
+        set ip 10.0.0.1 255.255.255.252
+        set allowaccess ping
+        set type physical
+        set snmp-index 2
+    next
+end
+
+FW01 # show system interface port3
+config system interface
+    edit "port3"
+        set vdom "root"
+        set ip 192.168.10.1 255.255.255.0
+        set allowaccess ping
+        set type physical
+        set snmp-index 3
+    next
+end
+
+FW01 # show router ospf
+config router ospf
+    set router-id 1.1.1.1
+    config area
+        edit 0.0.0.0
+        next
+    end
+    config network
+        edit 1
+            set prefix 10.0.0.0 255.255.255.252
+        next
+        edit 2
+            set prefix 192.168.10.0 255.255.255.0
+        next
+    end
+
+FW02 # show system interface port2
+config system interface
+    edit "port2"
+        set vdom "root"
+        set ip 10.0.0.2 255.255.255.252
+        set allowaccess ping
+        set type physical
+        set snmp-index 2
+    next
+end
+
+FW02 # show system interface port3
+config system interface
+    edit "port3"
+        set vdom "root"
+        set ip 192.168.20.1 255.255.255.0
+        set allowaccess ping
+        set type physical
+        set snmp-index 3
+    next
+end
+
+FW02 # show router ospf
+config router ospf
+    set router-id 1.1.1.2
+    config area
+        edit 0.0.0.0
+        next
+    end
+    config network
+        edit 1
+            set prefix 10.0.0.0 255.255.255.252
+        next
+        edit 2
+            set prefix 192.168.20.0 255.255.255.0
+        next
+    end
+
 ## Firewall Policies
 
 Firewall policies were required to permit traffic between the LAN and OSPF transit interfaces.
