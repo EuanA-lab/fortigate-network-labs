@@ -35,7 +35,9 @@ Port1 status set to down, default route removed from routing table
 
 On FW01 we run the commands 
 
-#set default-information-originate enable
+config router ospf
+    set default-information-originate enable
+end
 
 Once done we verify FW02 routing table
 
@@ -43,13 +45,13 @@ Once done we verify FW02 routing table
 
 ### Troubleshooting
 
-Connectivity was not immediately working
+Although FW02 successfully learned the default route through OSPF, Internet-bound traffic was initially unable to traverse FW01.
 
 On FW01 we required an additional firewall policy to allow traffic from port 2 to traverse out port 1, with NAT enabled
 
 <img width="545" height="257" alt="image" src="https://github.com/user-attachments/assets/fff1c212-2096-47e7-9c7f-5abbafb5fb80" />
 
-Verified connectivity from PC01
+Verified connectivity from PC02
 
 <img width="548" height="250" alt="image" src="https://github.com/user-attachments/assets/c659801d-f56d-4652-90de-37d71dbba12b" />
 
